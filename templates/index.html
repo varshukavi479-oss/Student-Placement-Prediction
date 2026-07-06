@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Placement Prediction</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Placement Prediction</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" step="0.1" name="cgpa" placeholder="CGPA" required>
+
+<input type="number" name="iq" placeholder="IQ Score" required>
+
+<input type="number" name="profile_score" placeholder="Profile Score" required>
+
+<input type="number" name="internship" placeholder="Internship (0/1)" required>
+
+<input type="number" name="communication" placeholder="Communication Score" required>
+
+<input type="number" name="projects" placeholder="Projects" required>
+
+<input type="number" name="aptitude" placeholder="Aptitude Score" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+<h2>{{ prediction }}</h2>
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
